@@ -1,0 +1,17 @@
+{
+  "name": "24_08_05_08_45_36_047.glb-viewer",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.167.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.1.0",
+    "@types/three": "^0.167.1",
+    "typescript": "^5.5.4",
+    "vite": "^5.3.5"
+  }
+}
