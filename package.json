@@ -1,5 +1,6 @@
 {
   "name": "24_08_05_08_45_36_047.glb-viewer",
+  "homepage": "https://nagata-minoru.github.io/24_08_05_08_45_36_047.glb-viewer",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
