@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { Mock, afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   DRACO_DECODER_PATH,
@@ -46,9 +47,12 @@ describe('createCamera', () => {
 
 describe('createLoader', () => {
   it('Draco デコーダーのパスを設定する', () => {
+    // デコーダーのパスの持ち方は three の版で変わるので、公開 API の呼び出しで確かめる
+    const setDecoderPath = vi.spyOn(DRACOLoader.prototype, 'setDecoderPath');
     const loader = createLoader();
-    expect(loader.dracoLoader).not.toBeNull();
-    expect(loader.dracoLoader!.decoderPath).toBe(DRACO_DECODER_PATH);
+    expect(loader.dracoLoader).toBeInstanceOf(DRACOLoader);
+    expect(setDecoderPath).toHaveBeenCalledWith(DRACO_DECODER_PATH);
+    setDecoderPath.mockRestore();
   });
 });
 
